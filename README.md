@@ -1,5 +1,6 @@
 # APT-Vi114
-villa HACKGDL
+
+# villa HACKGDL
 
 
 Documentación completa de un ataque Red Team a infraestructura hospitalaria:
@@ -14,17 +15,20 @@ Hector Espino: https://www.linkedin.com/in/hector-espino-431140164/
 
 Adonai Diaz: https://www.linkedin.com/in/carlos-adonai-diaz-esparza-ab1272286/
 
+
 Evasión de defensas
 
 Diego Hernandez: https://www.linkedin.com/in/diego-hernandez-253649210/
 
+
 Active Directory (Todos participan)
 
-Erick Sanchez: https://www.linkedin.com/in/erick-s%C3%A1nchez-vera-
-4b78011b4/
+Erick Sanchez: https://www.linkedin.com/in/erick-s%C3%A1nchez-vera-4b78011b4/
+
 
 Explotación de equipo médico
 
 Arnold Morales: https://www.linkedin.com/in/arnoldm19/
+
 
 La idea incial es que la villa sea 100% OpenSource, si quieren sumar en un futuro o añadir una mejora esperamos sus issues...
