@@ -4,9 +4,14 @@ Para la evasion utilizaremos un loader personalizado escrito en C, el cual carga
 
 ### MITRE ATT&CK
 
-T1055 – Process Injection
-T1620 – Reflective Code Loading
-Obfuscated Files or Information
-T1140 – Deobfuscate/Decode Files or Information
-T1059 – Command and Scripting Interpreter
-T1106 – Native API
+-T1055 Process Injection
+
+-T1620 Reflective Code Loading
+
+-T1027 Obfuscated Files or Information
+
+-T1140 Deobfuscate/Decode Files or Information
+
+-T1059 Command and Scripting Interpreter
+
+-T1106 Native API
