@@ -140,3 +140,30 @@ Si tu placa, en el visor 3D no tiene la forma de la figura, quiere decir que los
 </center>
 
 
+### 3. Diseño y Acomodo de componentes en la placa
+
+En la siguientes imagenes podrás observar cómo dejamos los diseños del addon, no se desea a entrar tanto a detalle ya que puede ser un poco tedioso, pero se jugó con los gráficos de la imagen base en la que nos basamos. El resultado fue el siguiente:
+
+<center>
+<img src="images/IMAGE18.png" width="50%"><img src="images/IMAGE19.png" width="50%">   
+</center>
+
+La decisión de acomodar los componentes en cierta posición dependen mucho de la imagen que se agrega y del diseño. Por nuestra parte se optó por poner los leds en las patitas, ojos y a unos costados. 
+
+Para las conexiones entre componentes de manera física, estas dependen de cómo estén conectados en el esquématico, es decir cómo se conectaron sus simbolos de cada led, cada capacitor y con el chip:
+
+<center>
+<img src="images/IMAGE20.png" width="80%">   
+</center>
+
+Aunque, también depende de cómo se acomoden en la placa, ya que a veces, para conectar algunos componentes pueda ser complicado y se deba modificar el esquématico para facilitar el trabajo de diseño.
+
+Finalmente, en las conexiones se debe evitar giros de 90 grados (pistas en L), se recomienda que los dobleces sean redondos o a 45 grados. También intentar que las conexiónes sean lo más directas posible, sin tantos cambios de lado de la placa y sin tantos cambios de dirección.
+
+Cómo resultado, las conexiones quedaron de esta manera:
+
+<center>
+<img src="images/IMAGE21.png" width="50%"><img src="images/IMAGE22.png" width="50%">   
+</center>
+
+### 4. Firmware y Programación del ADDON
