@@ -1,0 +1,3 @@
+[submodule "Addon/APT-Village-addon"]
+	path = Addon/APT-Village-addon
+	url = https://github.com/AdonaiDiazEsparza/APT-Village-addon.git
