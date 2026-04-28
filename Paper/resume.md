@@ -1,0 +1,102 @@
+# APT VILLAGE
+
+El objetivo de esta villa es presentar en sus distintas fases la cadena de compromiso
+de un hospital. Donde por cada fase se dará una sesión que aportará no sólo
+conceptos teóricos, sino también una fase lógica de un atacante incluyendo demos
+y laboratorios que permitan a los asistentes poner en práctica los conocimientos
+adquiridos y ampliar su perspectiva al momento de realizar pruebas de penetración.
+La visión general que tenemos de esta villa es mostrar, tanto a las personas que
+van iniciando como a los que ya tienen experiencia en este ámbito, el pensamiento
+lógico y de razonamiento que tiene un APT normalmente en el mundo real y poder
+compartir técnicas que comúnmente no se encuentran fácilmente en un curso o
+taller de internet, por lo que creemos que esto aporta significativamente a las
+habilidades de las personas que asistan a esta villa.
+La dinámica que se tendrá con los participantes, además de mostrar las técnicas y
+procedimientos avanzados, será a través de preguntas y regalos (playeras, stickers,
+parches, etc), que podrán ganarse mientras respondan estas preguntas, también
+daremos la oportunidad a que los participantes prueben cada una de las técnicas
+que vamos viendo y que nos pregunten dudas, hagan modificaciones, o planteen
+escenarios alternativos con los que podremos ir dando retroalimentación.
+Ademas de enfocarnos en mostrar como se realiza un compromiso de la
+infraestructura se mostrara ataques post compromiso y acciones sobre el objetivo:
+Posterior al compromiso de la organización, se presentarán las acciones que un
+APT puede realizar para: el secuestro de la información e infraestructura del
+hospital, establecimiento de persistencia y espionaje a largo plazo.
+
+## Secuestro de información e Infraestructura:
+
+- Métodos de secuestro de equipos mediante herramientas legítimas de administración.
+
+- Despliegue masivo de políticas para el cifrado de discos y eliminación de accesos legítimos.
+
+- Abuso de tecnologías de despliegue de software para implantar ransomware.
+
+- Persistencia.
+
+- Backdooring del firmware de sistemas perimetrales y OT.
+
+- Técnicas de persistencia en active directory.
+
+- Técnicas de opsec para el forjado de diferentes tipos de tickets.
+
+- Alteración de cuentas legítimas mediante Shadow credentials.
+
+- Creación de objetos del tipo computadora y persistencia mediante permisos de delegación.
+
+- Espionaje a largo plazo.
+
+- Desarrollo de troyanos y servidores para la recolección de información.
+
+- Enfocado en el robo de credenciales e información médica.
+
+- Técnicas de OPSEC y mejores prácticas para realizar exfiltración periódica.
+
+Es importante destacar que los asistentes podrán elegir libremente a que sesión
+asistirá (la agenda es representativa tanto como nombres y horarios, esto por motivo
+de organización del evento). Aunque todas las fases están interconectadas dentro
+del mismo hilo narrativo, ninguna sesión depende de otra, por lo que cada
+participante podrá incorporarse en la sesión que más le interese sin requerir de lo
+visto previamente. Todos los laboratorios serán guiados y se entregará un manual
+para que los asistentes puedan repasar posteriormente lo realizado en las fases que
+no pudieron atender.
+
+Se contará con una infraestructura virtualizada, desarrollada por nosotros. El nivel
+objetivo de la villa es intermedio/avanzado, pero nos enfocaremos en ofrecer
+facilidades tanto para asistentes con experiencia avanzada como para quienes se
+encuentren iniciando.
+
+Finalmente, el escenario será lo más realista posible, basado en experiencias
+laborales de los ponentes y orientado completamente a la red team, buscando que
+cada participante se lleve no solo teoría, sino prácticas y metodologías aplicables a
+operaciones reales.
+
+# Regalos
+
+Como en todo nuestros eventos contara con ADDOns que te los puedes ganar en distintas dinamicas ya sea en las charlas o dinamicas de redes sociales, camisas de APT y gorras tambien se estaran regalando.
+En nuestros premios de algun CTF o actividad de la villa, tendremos Jammers de BLE y Libros que podras obtener si ganas alguna de estas competencia.
+
+# Agenda 
+
+como se ha mencionado anteriormente nuestra agenda gira entorno a las actualizaciones la vision de la villa es enseñar pero no repetir las charlas almenos que de verdad tengan un impacto tecnico dificil de comprender y/o sea innovador hasta el momento, pero estamos modificando constantemente tecnicas de Evasion y AD, sin olvidar actualizaciones de agente frente a los EDRs esto para que se lleven una experiencia unica dentro de cualquier evento.
+
+# APT Village - Agenda de Charlas
+
+| Hora           | Charla                                                                 | Ponente(s)                  |
+|----------------|------------------------------------------------------------------------|-----------------------------|
+| 9:50 - 10:20   | Iniciación de la Villa, apertura del escenario de ataque              | —                           |
+| 10:20 - 11:10  | Medical hacking                                                       | Arnold Morales              |
+| 11:20 - 12:00  | Evasión y escalation en primer punto de apoyo                         | Diego Hernández             |
+| 12:10 - 1:40   | Contacto con red corporativa - El verdadero inicio                    | Erick Sánchez               |
+| 1:40 - 2:10    | Comida                                                                | —                           |
+| 2:20 - 3:40    | DACL - La verdad sobre el enterprise / comprometiendo AD              | Tierno / Hokma / V3nuz      |
+| 3:50 - 4:30    | Persistencia en AD por Driver Vulnerables 2026                        | Adonai Díaz                 |
+| 4:40 - 5:40    | El despliegue verdadero de un APT (no todo es lo que ves en redes sociales) | Héctor Espino              |
+| 5:40 - 6:00    | Dinámicas / Premios / Regalos / Cierre de la Villa                    | —                           |
+
+(Los horarios pueden variar dependiendo el evento)
+
+# Colaboraciones
+
+Si tu quieres exponer o ayudar ala villa en alguna actividad, podemos recibir cualquier informacion en nuestro instagram que seran redirigidos con el equipo para tener una charla y ver la manera de poder compartir tu conocimiento.
+ @aptvillage_
+
