@@ -74,5 +74,6 @@ Estos workshops se iran rotando, se hara encuesta en nuestro instagram para sele
 
 
 
-aqui existiran dinamicas para los que quieran participar en la villa, ademas de el codigo y aprendizaje se rifara un premio central
+Aqui existiran dinamicas para los que quieran participar en la villa, ademas de el codigo y aprendizaje se rifara un premio central
 
+Los papers de cada workshop seran publicados en este repo.
