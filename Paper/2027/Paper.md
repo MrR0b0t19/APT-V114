@@ -43,3 +43,36 @@ en esta parte hay proyectos y cosas que pueden hacer perder el tiempo a cualquie
 
 (Los horarios pueden variar)
 
+---
+
+ESTA AGENDA ES PARA EL DIA MAS IMPORTANTE DEL EVENTO, SI SON DOS DIAS ACTUALIZAMOS AL PRIMER DIA MOSTRAR "WORKSHOPS"
+
+los siguientes temas estaran presente en los workshops que tendran una duracion de 60-90 min, en los que se enseñara las bases de cualquier tecnica se explicara codigo y se compartira con la audiencia para sus futuras pruebas.
+
+lista: 
+
+- UDRL Sleepmasks for dummies
+- Telemetria, Kernel y evasion
+- Drivers vulnerables
+- evasion de EDR con hookchain
+- BOF develpment
+- Active Directory 101
+- My first Bootkit
+- DMA avanzado
+- Buscando deserializaciones
+- My first EDR - hook
+- Flipper Zero for dummies
+- Hardware?, como diseñar mi ADDON..
+- Kerberoasting
+- Ing Social para red team
+- My firts jammer BLE
+
+Estos workshops se iran rotando, se hara encuesta en nuestro instagram para seleccionar los workshop del dia por evento se buscara dar minimo 5 workshop. 
+
+**Si tienes un tema de investigacion que quieras compartir enviame mensaje**
+
+
+
+
+aqui existiran dinamicas para los que quieran participar en la villa, ademas de el codigo y aprendizaje se rifara un premio central
+
