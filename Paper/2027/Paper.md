@@ -20,10 +20,26 @@ en esta parte hay proyectos y cosas que pueden hacer perder el tiempo a cualquie
 - Contacto inicial - Persistencia/deshabilitacion de defensas
 - Dump de lsass / Contacto con AD
 - movimiento en AD - Compromiso a todos los ATMs
+- Phishing corporativo para AD
 - Piviting a red corporativa
 - beacons/cargas - persistencia/estabilidad
 - post-explotacion
 
 # Agenda
 
+
+| Hora           | Charla                                                                 | Ponente(s)                  |
+|----------------|------------------------------------------------------------------------|-----------------------------|
+| 9:50 - 10:20   | Iniciación de la Villa, apertura del escenario de ataque              | —                           |
+| 10:20 - 11:10  | Hacking SmartLock for fun and profit                                  | Cesar Ortega                |
+| 11:20 - 12:00  | DMA Attack en ATMs                                                    | Arnold Morales              |
+| 12:10 - 1:40   | Hookchain with beacon                                                 | Diego Hernandez             |
+| 12:10 - 1:40   | Persistencia con Driver vulnerables                                   | Adonai Diaz / Arnold Morales|
+| 1:40 - 2:10    | Comida                                                                | —                           |
+| 2:20 - 3:40    | DACL - La verdad sobre el enterprise / comprometiendo AD              | Tierno / Hokma / Sky blue   |
+| 3:50 - 4:30    | BOF / PICs / UDRL SLEEPMASK - Cuales son tus mejores cartas?          | Bdragon / Hokma / Donuts    |
+| 4:40 - 5:40    | El despliegue verdadero de un APT (no todo es lo que ves en reels)    |  Héctor Espino              |
+| 5:40 - 6:00    | Dinámicas / Premios / Regalos / Cierre de la Villa                    | —                           |
+
+(Los horarios pueden variar)
 
