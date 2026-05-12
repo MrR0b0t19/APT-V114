@@ -66,6 +66,9 @@ lista:
 - Kerberoasting
 - Ing Social para red team
 - My firts jammer BLE
+- Mobile hacking
+- Hacking a videojuegos
+- Como hacer bug bounty?
 
 Estos workshops se iran rotando, se hara encuesta en nuestro instagram para seleccionar los workshop del dia por evento se buscara dar minimo 5 workshop. 
 
