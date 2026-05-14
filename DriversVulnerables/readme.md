@@ -325,51 +325,117 @@ Una vez compilado cada uno de los programas, tendremos los siguientes archivos d
 bcdedit /set testsigning on
 ```
 
-Y simplemente reinicias la computadora para que tu Windows entre en modo Test.
+Y simplemente reinicias la computadora para que tu Windows entre en modo Test. Puede llegar a pasar de que no se ejecute el comando e indique un error, posiblemente sea por motivo de ```SecureBoot``` que este evita que no se instalen o ejecuten drivers no firmados, por lo que se tiene que desactivar desde la configuración de BIOS. 
 
 >Nota: En windows 10 y 11, unicamente se pueden hacer pruebas de drivers en modo kernel no firmados en Test Mode. De lo contrario no funcionara, si deseas continuar desarrollando modulos kernel, te recomiendo que realices tus pruebas en una maquina virtual
 
 También usaremos la herramienta de [DebugView](https://learn.microsoft.com/en-us/sysinternals/downloads/debugview) para poder observar los logs del driver. Al dar click en el link de descarga, recibiras un archivo comprimido, este tiene tres programas, usarás el que se llama ```Dbgview.exe```.
 
-[Imagen2]
+<p align=center>
+<img src="images/Imagen1.png" width="80%">   
+</p>
 
 Al abrirlo verás la siguiente interfaz:
 
-[Imagen3]
+<p align=center>
+<img src="images/Imagen2.png">   
+</p>
 
 Y en esta te dirigirás al icóno de filtro o con las teclas ```ctrl+L```, donde en el campo ```include``` agregaras ```DRIVER_TEST```. Esto para únicamente observar los mensajes que imprime nuestro driver y no todos los mensajes de salida del kernel.
 
-[Imagen4]
+<p align=center>
+<img src="images/Imagen3.png" width="95%">   
+</p>
 
 Después en la pestaña ```Capture``` seleccionarás todas las opciones disponibles, excepto ```Log Boot```.
 
-[Imagen5]
+<p align=center>
+<img src="images/Imagen4.png" width="95%">   
+</p>
 
 En mi caso yo seleccioné la carpeta raiz (```C:\```) para crear una carpeta que se llame ```Test``` y ahí poner mis archivos.
 
-[Imagen1]
+<p align=center>
+<img src="images/Imagen5.png">   
+</p>
 
 
 Después abro una ```cmd``` en modo administrador y pongo el siguiente comando:
 
-```
+```cmd
 sc.exe create Test type=kernel binPath="C:\Test\MyDrvr.sys"
 ```
 
 Una vez ejecutado, obtendrás el mensaje de servicio creado correctamente. Y después para iniciar el servicio, simplemente ejecutar el siguiente comando:
 
-```
+```cmd
 sc.exe start Test
 ```
 
 Y una vez realizado eso, veremos el mensaje de servicio inicializado correctamente, incluso en el Programa de DebugView veremos un mensaje de cuando se carga el driver.
 
-[Imagen6, cmd]
+<p align=center>
+<img src="images/Imagen6.png">   
+</p>
 
-[Imagen7, DbgView]
+<p align=center>
+<img src="images/Imagen7.png">   
+</p>
+
 
 Ya corriendo nuestro servicio con el driver, podemos ejecutar nuestro programa y enviar un valor. Para eso únicamente debemos escribir lo siguiente en la ```cmd```:
 
+```cmd
+C:\Test>Application numero
 ```
 
+Por ejemplo a mi ejecutable le enviaré 2 valores, primero 200 y después 50 de esta manera:
+
+```cmd
+Application 200
+
+Application 50
 ```
+Las respuestas fueron las siguientes:
+
+<p align=center>
+<img src="images/Imagen8.png">   
+</p>
+
+
+Y en el DebugView se pudo observar lo siguiente:
+
+<p align=center>
+<img src="images/Imagen9.png">   
+</p>
+
+Entonces de esta manera nos damos cuenta que si se están imprimendo los logs del driver cuando se ejecutan las rutinas.
+
+Dandonos un ejemplo de cómo usar los drivers desde espacio de usuario y que realmente muchos de los programas así funcionan, ya qué, algunos tienen alguna API para comunicarse a estos, más adelante daremos más ejemplos de algunos Drivers.
+
+Para eliminar el driver cargado, únicamente hay que detener el servicio y eliminarlo, ya podrás eliminar incluso el driver sin problemas.
+
+Para detenerlo:
+```
+sc.exe stop Test
+```
+y para eliminarlo de los servicios:
+```
+sc.exe delete Test
+```
+Ya visto desde la aplicación de comandos quedaría así:
+
+<p align=center>
+<img src="images/Imagen10.png" width="80%">   
+</p>
+
+Para salir del modo ```Test``` de windows, simplemenete hay que ejecutar el siguiente comando:
+
+```
+bcdedit /set testsigning off
+```
+
+Y al final reiniciar la computadora, si desactivaste el ```SecureBoot``` te recomendaría volverlo a activar.
+
+
+## CVE-2026-21241. Un "Use After Free" en AFD.sys
