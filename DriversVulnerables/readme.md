@@ -57,7 +57,7 @@ Donde se asigna una funcion de interrupción de creación y cierre, y por últim
 Después creamos el objeto con la siguiente función ```IoCreateDevice``` que recibe ciertos parametros:
 - El objeto del driver
 - El nombre del objeto
-- El tipo del obejto 
+- El tipo del objeto 
 - El puntero al objeto
 
 Nuestro código quedaría así:
@@ -259,6 +259,16 @@ HANDLE hDevice = CreateFile(L"\\\\.\\MyDriver", GENERIC_WRITE, 0, nullptr, OPEN_
 
 Y con la función ```WriteFile``` podremos escribir sobre este buffer del "archivo" del objeto creado y así comunicarnos al driver.
 
+```Cpp
+    ULONG number = data;
+
+    DWORD returned;
+
+    BOOL success = WriteFile(hDevice, &number, sizeof(number), &returned, nullptr);
+```
+
+En nuestro código únicamente escribimos el valor de un numero de tipo ```ULONG```, el cual se deberá observar en los prints o logs del driver.
+
 <details>
 <summary>
 Código completo
@@ -294,7 +304,7 @@ int main(int argc, const char* argv[])
         return 0;
     }
 
-    /*The data is just a */
+    /*The data is just a number type ULONG*/
     ULONG number = data;
 
     DWORD returned;
