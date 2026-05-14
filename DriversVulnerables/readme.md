@@ -468,7 +468,8 @@ En programación de Windows (a bajo nivel) existe referenciación de objetos o d
 
 Lo que sucede en este driver y en la API, existe un error donde, haciendo uso simultaneo de varias funciones que hacen referenciaciones y desreferencias a los objetos (en este caso web sockets), pueden provocar que queden objetos olvidados.
 
-A que me refiero con que queden objetos olvidados? La API, en una función piensa que ya eliminó el socket, pero de manera simultánea usando otra que los encola, por lo que quedan libres de memoria y referenciados. Es decir queda un puntero flotante que hace referencia a un espacio de memoria nulo.
+A que me refiero con que queden objetos olvidados? La API, en una función provoca que elimine el socket, pero de manera simultánea otra los encola y deja un puntero flotante, por lo que quedan libres de memoria y referenciados.
 
-<b>Qué se puede hacer con esto?</b> El atacante puede colocar código malicioso y hacer uso del espacio de memoria referenciado que se encuentra libre, al estar referenciado por el kernel, este puede ejecutarse con privilegios de NTSystem y hacer lo que desee. Pero esto es complicado de realizar ya que ocupas cierto grado de conocimiento en programación. 
+<b>Qué se puede hacer con esto?</b> El atacante puede colocar código malicioso y hacer uso del espacio de memoria referenciado que se encuentra libre, al estar referenciado por el kernel, este puede ejecutarse con privilegios de NTSystem. Pero es complicado de realizar ya que ocupas elevado grado de conocimiento en programación para poder cazar la dirección de memoria en la que el puntero flotante se encuentra.
 
+Aunque, a final de cuentas no deja de ser vulnerabilidad por dejar punteros flotantes libres. 
