@@ -87,10 +87,10 @@ Depués generamos el simbolo de enlace con el cual podremos comunicarnos desde u
 
 Este código es funcional para poderse comunicar directamente con el sencillo driver que vamos a crear, esto desde alguna aplicación que generemos y que tenga el código para enviar la información a través de los "buffers" IOCTL del objeto.
 
->Si deseas ver el código completo puedes copiarlo del siguiente bloque de código solo con expandirlo.
-
 <details>
-<summary>Código completo</summary>
+<summary>
+Código completo del driver
+</summary>
 
 ```Cpp
 #include <Ntifs.h>
@@ -247,3 +247,129 @@ NTSTATUS MySampleObjectWrite(PDEVICE_OBJECT DeviceObject, PIRP Irp)
 
 </details>
 
+>Si deseas ver el código completo puedes copiarlo del bloque de código solo con expandirlo.
+
+Una vez ya se tenga el driver listo, podemos crear el ejecutable que se comunicara a este.
+
+En nuestra aplicación de consola no habrá algo especial simplemente usaremos dos funciones para abrir y escribir archivos. En este caso un archivo ya existente que apunta a ```L"\\\\.\\MyDriver"```:
+
+```Cpp
+HANDLE hDevice = CreateFile(L"\\\\.\\MyDriver", GENERIC_WRITE, 0, nullptr, OPEN_EXISTING, 0, nullptr);
+```
+
+Y con la función ```WriteFile``` podremos escribir sobre este buffer del "archivo" del objeto creado y así comunicarnos al driver.
+
+<details>
+<summary>
+Código completo
+</summary>
+
+```Cpp
+#include <Windows.h>
+#include <iostream>
+
+int main(int argc, const char* argv[])
+{
+
+    if (argc < 2) {
+        printf("No parameters\n");
+        return 0;
+    }
+
+    if (argc > 2) {
+        printf("Too much parameters\n");
+        return 0;
+    }
+
+    int data = atoi(argv[1]);
+
+    printf("your number %d\n", data);
+
+    /* Function to open file */
+    HANDLE hDevice = CreateFile(L"\\\\.\\MyDriver", GENERIC_WRITE, 0, nullptr, OPEN_EXISTING, 0, nullptr);
+
+    if (hDevice == INVALID_HANDLE_VALUE)
+    {
+        printf("ERROR CREATING HANDLE!\n");
+        return 0;
+    }
+
+    /*The data is just a */
+    ULONG number = data;
+
+    DWORD returned;
+    BOOL success = WriteFile(hDevice, &number, sizeof(number), &returned, nullptr);
+
+    if (!success) {
+        CloseHandle(hDevice);
+        printf("ERROR SENDING BUFFER!\n");
+        return 0;
+    }
+
+    printf("Number was changed\n");
+
+    CloseHandle(hDevice);
+
+    return 0;
+}
+```
+
+</details>
+
+>Si deseas ver el código completo del ejecutable solo expande el código completo
+
+
+Una vez compilado cada uno de los programas, tendremos los siguientes archivos de salida, un ```.sys``` y un ```.exe```. Para que funcione nuestro driver, debemos tener nuestro windows en modo de Test el cual puede realizarce ingresando en el powershell el siguiente comando:
+
+```
+bcdedit /set testsigning on
+```
+
+Y simplemente reinicias la computadora para que tu Windows entre en modo Test.
+
+>Nota: En windows 10 y 11, unicamente se pueden hacer pruebas de drivers en modo kernel no firmados en Test Mode. De lo contrario no funcionara, si deseas continuar desarrollando modulos kernel, te recomiendo que realices tus pruebas en una maquina virtual
+
+También usaremos la herramienta de [DebugView](https://learn.microsoft.com/en-us/sysinternals/downloads/debugview) para poder observar los logs del driver. Al dar click en el link de descarga, recibiras un archivo comprimido, este tiene tres programas, usarás el que se llama ```Dbgview.exe```.
+
+[Imagen2]
+
+Al abrirlo verás la siguiente interfaz:
+
+[Imagen3]
+
+Y en esta te dirigirás al icóno de filtro o con las teclas ```ctrl+L```, donde en el campo ```include``` agregaras ```DRIVER_TEST```. Esto para únicamente observar los mensajes que imprime nuestro driver y no todos los mensajes de salida del kernel.
+
+[Imagen4]
+
+Después en la pestaña ```Capture``` seleccionarás todas las opciones disponibles, excepto ```Log Boot```.
+
+[Imagen5]
+
+En mi caso yo seleccioné la carpeta raiz (```C:\```) para crear una carpeta que se llame ```Test``` y ahí poner mis archivos.
+
+[Imagen1]
+
+
+Después abro una ```cmd``` en modo administrador y pongo el siguiente comando:
+
+```
+sc.exe create Test type=kernel binPath="C:\Test\MyDrvr.sys"
+```
+
+Una vez ejecutado, obtendrás el mensaje de servicio creado correctamente. Y después para iniciar el servicio, simplemente ejecutar el siguiente comando:
+
+```
+sc.exe start Test
+```
+
+Y una vez realizado eso, veremos el mensaje de servicio inicializado correctamente, incluso en el Programa de DebugView veremos un mensaje de cuando se carga el driver.
+
+[Imagen6, cmd]
+
+[Imagen7, DbgView]
+
+Ya corriendo nuestro servicio con el driver, podemos ejecutar nuestro programa y enviar un valor. Para eso únicamente debemos escribir lo siguiente en la ```cmd```:
+
+```
+
+```
