@@ -10,13 +10,17 @@ Al trabajar directamente a nivel kernel, los drivers tinene un nivel de privileg
 ## Modo Usuario y Modo Kernel
 Antes de dar a conocer drivers vulnerables, deseo explicar un poco sobre cómo funcionan y cómo es posible que sean vulnerables desde un punto de vista del desarrollo.
 
+<p align=center>
+<img src="images/capas.jpg" width="80%">   
+</p>
+
 Existen dos modos en windows:
 - Modo Usuario
 - Modo Kernel
 
-El modo usuario son todas aquellas aplicaciones con las cuales el usuario puede interactuar, estas tienen su propio espacio de memoria virtual con el cual trabajar y no afectan al sistema si alguna aplicación llega a fallar.
+En el modo usuario son todas aquellas aplicaciones con las cuales el usuario puede interactuar, estas tienen su propio espacio de memoria virtual con el cual trabajar y no afectan al sistema si alguna aplicación llega a fallar.
 
-El modo kernel, los controladores, servicios y gestionamiento de recursos del equipo, funcionan solamente en kernel, y aquí hay una gran diferencia a las aplicaciones de modo usuario, estos comparten el mismo espacio y si existe algún error en la programación de algún componente en kernel, pueden generar un falla o el conocido "pantalla azul" (BSOD) y afectar al equipo.
+En el modo kernel, los controladores, servicios y gestionamiento de recursos del equipo, funcionan solamente en kernel, y aquí hay una gran diferencia a las aplicaciones de modo usuario, estos comparten el mismo espacio y si existe algún error en la programación de algún componente en kernel, pueden generar un falla o el conocido "pantalla azul" (BSOD) y afectar al equipo.
 
 ## ¿Cómo se puede interactar entre Kernel y Espacio de Usuario?
 
@@ -449,3 +453,22 @@ Y al final reiniciar la computadora, si desactivaste el ```SecureBoot``` te reco
 
 
 ## CVE-2026-21241. Un "Use After Free" en AFD.sys
+
+Esta es una vulnerabilidad encontrada y reportada por Souhail Hammou, donde en su [blog](https://rce4fun.blogspot.com/2026/02/use-after-free-in-afdsys-cve-2026-21241.html) explica cómo es que la encuentra y muestra una pequeña POC de qué es lo que se puede realizar.
+
+AFD.sys es un controlador a nivel kernel incluido en el mismo windows y que se encarga de implementar la funcionalidad del socket central para la API de Winsock. Es de vital importancia este controlador, ya que se encarga de la conectividad a internet, maneja parte de la interacción DHCP y si llega a fallar puede provocar errores de conexión o puede generar pantallazos azules (BSOD).
+
+### Pero... ¿Qué hace esta vulnerabilidad?
+
+Bueno... En resumen Souhail Hammou encuentra un punto de fuga de referenciación de objetos en la API de WinSock que se cómunica al controlador <b>afd.sys</b>. 
+
+<b>Cómo es que sucede esto?</b> Puede ser algo complicado de explicar, pero a final de cuentas intentaré de hacerlo lo más simple posible.
+
+En programación de Windows (a bajo nivel) existe referenciación de objetos o de memoria, donde un contador de referencia incrementa o decrementa cuantas veces está en uso el objeto, cuando este contador llega a 0, libera la memoria (Cómo si fuera una función ```free()```) y el objeto deja de estar referenciado.
+
+Lo que sucede en este driver y en la API, existe un error donde, haciendo uso simultaneo de varias funciones que hacen referenciaciones y desreferencias a los objetos (en este caso web sockets), pueden provocar que queden objetos olvidados.
+
+A que me refiero con que queden objetos olvidados? La API, en una función piensa que ya eliminó el socket, pero de manera simultánea usando otra que los encola, por lo que quedan libres de memoria y referenciados. Es decir queda un puntero flotante que hace referencia a un espacio de memoria nulo.
+
+<b>Qué se puede hacer con esto?</b> El atacante puede colocar código malicioso y hacer uso del espacio de memoria referenciado que se encuentra libre, al estar referenciado por el kernel, este puede ejecutarse con privilegios de NTSystem y hacer lo que desee. Pero esto es complicado de realizar ya que ocupas cierto grado de conocimiento en programación. 
+
