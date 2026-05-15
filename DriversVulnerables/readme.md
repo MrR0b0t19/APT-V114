@@ -452,7 +452,7 @@ bcdedit /set testsigning off
 Y al final reiniciar la computadora, si desactivaste el ```SecureBoot``` te recomendaría volverlo a activar.
 
 
-## CVE-2026-21241. Un "Use After Free" en AFD.sys
+## CVE-2026-21241. Un "Use After Free (UAF)" en AFD.sys
 
 Esta es una vulnerabilidad encontrada y reportada por Souhail Hammou, donde en su [blog](https://rce4fun.blogspot.com/2026/02/use-after-free-in-afdsys-cve-2026-21241.html) explica cómo es que la encuentra y muestra una pequeña POC de qué es lo que se puede realizar.
 
@@ -473,3 +473,18 @@ A que me refiero con que queden objetos olvidados? La API, en una función provo
 <b>Qué se puede hacer con esto?</b> El atacante puede colocar código malicioso y hacer uso del espacio de memoria referenciado que se encuentra libre, al estar referenciado por el kernel, este puede ejecutarse con privilegios de NTSystem. Pero es complicado de realizar ya que ocupas elevado grado de conocimiento en programación para poder cazar la dirección de memoria en la que el puntero flotante se encuentra.
 
 Aunque, a final de cuentas no deja de ser vulnerabilidad por dejar punteros flotantes libres. 
+
+
+## UAF (Use After Free)
+
+La técnica UAF(Use After Free), es una manera de usar los punteros flotantes que deja algún programa para poder explotarlo y subir privilegios, en este caso es muy usado en Drivers.
+
+Existe un [repositorio](https://github.com/hacksysteam/HackSysExtremeVulnerableDriver) proporciona un driver a nivel kernel para realizar esta técnica, aunque es un driver de demostración intencionalmente vulnerable es usado para la PoC de "Use After Free", esto se explica en diferentes blogs:
+
+- https://rootkits.xyz/blog/2018/04/kernel-use-after-free/
+- https://m2rc.net/posts/hevd-useafterfree/
+- https://vuln.dev/windows-kernel-exploitation-hevd-x64-use-after-free/
+
+
+## RTCore64.sys
+Este es un driver a nivel kernel, que es usado para generar overclocking en tarjetas gráficas. Este driver permite a la computadora comunicarse con el hardware y dispositivos conectados, es decir, tiene acceso directo con el manejo del hardware.
