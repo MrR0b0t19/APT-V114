@@ -488,3 +488,5 @@ Existe un [repositorio](https://github.com/hacksysteam/HackSysExtremeVulnerableD
 
 ## RTCore64.sys
 Este es un driver a nivel kernel, que es usado para generar overclocking en tarjetas gráficas. Este driver permite a la computadora comunicarse con el hardware y dispositivos conectados, es decir, tiene acceso directo con el manejo del hardware.
+
+Este Driver, al parecer es muy vulnerable, a lo largo del tiempo ha tenido muchos exploits, algunos de ellos funcionan para el manejo de memoria y de esa manera nos permite incluso desactivar las seguridades de windows. Lo qué más se ha logrado realizar con este driver es 
