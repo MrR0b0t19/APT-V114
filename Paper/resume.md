@@ -83,11 +83,11 @@ como se ha mencionado anteriormente nuestra agenda gira entorno a las actualizac
 
 | Hora           | Charla                                                                 | Ponente(s)                  |
 |----------------|------------------------------------------------------------------------|-----------------------------|
-| 9:50 - 10:20   | Iniciación de la Villa, apertura del escenario de ataque              | —                           |
-| 10:20 - 11:10  | Medical hacking                                                       | Arnold Morales              |
-| 11:20 - 12:00  | Evasión y escalation en primer punto de apoyo                         | Diego Hernández             |
-| 12:10 - 1:40   | Contacto con red corporativa - El verdadero inicio                    | Erick Sánchez               |
-| 1:40 - 2:10    | Comida                                                                | —                           |
+| 9:00 - 9:15   | Iniciación de la Villa, apertura del escenario de ataque              | —                           |
+| 9:15 - 10:15  | Medical hacking                                                       | Arnold Morales              |
+| 10:30 - 11:15  | Evasión y escalation en primer punto de apoyo                         | Diego Hernández             |
+| 11:30 - 1:00   | Contacto con red corporativa - El verdadero inicio                    | Erick Sánchez               |
+| 1:00 - 2:10    | Comida                                                                | —                           |
 | 2:20 - 3:40    | DACL - La verdad sobre el enterprise / comprometiendo AD              | Tierno / Hokma / V3nuz      |
 | 3:50 - 4:30    | Persistencia en AD por Driver Vulnerables 2026                        | Adonai Díaz                 |
 | 4:40 - 5:40    | El despliegue verdadero de un APT (no todo es lo que ves en redes sociales) | Héctor Espino              |
