@@ -489,4 +489,14 @@ Existe un [repositorio](https://github.com/hacksysteam/HackSysExtremeVulnerableD
 ## RTCore64.sys
 Este es un driver a nivel kernel, que es usado para generar overclocking en tarjetas gráficas. Este driver permite a la computadora comunicarse con el hardware y dispositivos conectados, es decir, tiene acceso directo con el manejo del hardware.
 
-Este Driver, al parecer es muy vulnerable, a lo largo del tiempo ha tenido muchos exploits, algunos de ellos funcionan para el manejo de memoria y de esa manera nos permite incluso desactivar las seguridades de windows. Lo qué más se ha logrado realizar con este driver es 
+Este Driver, al parecer es muy vulnerable, a lo largo del tiempo ha tenido muchos exploits, algunos de ellos funcionan para el manejo de memoria y de esa manera nos permite incluso desactivar las seguridades de windows.
+
+En el repositorio de [PPLKiller](https://github.com/RedCursorSecurityConsulting/PPLKiller) muestra un ejemplo de una prueba de concepto de cómo se puede escalar privilegios explotando el driver de ```RTCore64```, utilizando un ejecutable que logra comunicarse  a través de los "buffers" de IOCTL. 
+
+Este funciona cómo script que le puedes pasar parametros, si quieres ver las opciones que tiene simplente se ejecuta el archivo sin pasar paramétros. Al momento de ejecutarlo te despliega la siguiente un menú de ayuda, el cual te indica que opciones tienes. En nuestro caso seleccionamos instalar el driver y ejecutar la cmd con privilegios elevados. En el siguiente video vemos la prueba de concepto:
+
+<p align=center>
+<video src="Videos/PPL_PoC.mp4" controls></video>
+</p>
+
+
