@@ -1,6 +1,6 @@
 # APT-Vi114
 
-# villa HACKGDL
+# villa 
 
 
 Documentación completa de un ataque Red Team a infraestructura hospitalaria:
