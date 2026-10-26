@@ -34,11 +34,10 @@ en esta parte hay proyectos y cosas que pueden hacer perder el tiempo a cualquie
 | 10:20 - 11:10  | Hacking SmartLock for fun and profit                                  | Cesar Ortega                |
 | 11:20 - 12:00  | DMA Attack en ATMs                                                    | Arnold Morales              |
 | 12:10 - 1:40   | Hookchain with beacon                                                 | Diego Hernandez             |
-| 12:10 - 1:40   | Persistencia con Driver vulnerables                                   | Adonai Diaz / Arnold Morales|
 | 12:10 - 1:40   | Movimiento lateral / Deserializacion                                  | Emiyelbarto                 |
 | 1:40 - 2:10    | Comida                                                                | —                           |
 | 2:20 - 3:40    | DACL - La verdad sobre el enterprise / comprometiendo AD              | Tierno / Hokma / Sky blue   |
-| 3:50 - 4:30    | BOF / PICs / UDRL SLEEPMASK - Cuales son tus mejores cartas?          | Hokma / Donuts / venuz      |
+| 3:50 - 4:30    | BOF / PICs / UDRL SLEEPMASK - Cuales son tus mejores cartas?          | Adonai Diaz  / Hokma        |
 | 4:40 - 5:40    | El despliegue verdadero de un APT (no todo es lo que ves en reels)    |      APT VILLAGE            |
 | 5:40 - 6:00    | Dinámicas / Premios / Regalos / Cierre de la Villa                    | —                           |
 
