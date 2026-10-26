@@ -52,10 +52,12 @@ los siguientes temas estaran presente en los workshops que tendran una duracion 
 lista: 
 
 - UDRL Sleepmasks for dummies
+- Windows internals
 - Telemetria, Kernel y evasion
 - Drivers vulnerables
 - evasion de EDR con hookchain
 - BOF develpment
+- Ingeniería de detección 
 - Active Directory 101
 - My first Bootkit
 - DMA avanzado
@@ -65,6 +67,7 @@ lista:
 - Hardware?, como diseñar mi ADDON..
 - Kerberoasting
 - Ing Social para red team
+- Automating Web Exploits & vulns with python 101
 - My firts jammer BLE
 - Mobile hacking
 - Hacking a videojuegos
