@@ -1,6 +1,6 @@
 # APT Sobre instituciones financieras
 
-Este paper posiblemente se de una unica vez en mexico, se esta preparando la documentacion extensa sobre la informacion tecnica bajo /APT-V114/Paper/2027. 
+Este paper posiblemente se de una unica vez en mexico, se esta preparando la documentacion extensa sobre la informacion tecnica bajo /APT-V114/Paper/2027. - pero unica edicion en bugcon!
 
 # Nuevo giro
 
@@ -12,6 +12,8 @@ este giro a llevado al equipo a seleccionar nuevos expositores que puedan sumar 
 Este APT inicia desde un acceso fisico en el ATM, este acceso es obtenido gracias a una vulnerabilidad encontrada en su chapa electronica que permite acceso ala parte blanda del ATM posteriormente conectando un hardware en el dispositivo y volviendo a cerrar el ATM podremos realizar un acceso al ATM abriendo la posibilidad a una dispensacion pero lo que se hara sera utilizarlo como punto de apoyo para empezar a realizar reconocmiento en la red financiera,
 con esto presente se utilizara una tecnica de evasion de telemetria por drivers, accediendo al kernel para desactivar el EDR y empezar a jugar con la red, teniendo la persstencia realizada encontramos un AD con una mala implementacion ya que al dumpear los LSASS podemos ver que el usuario de soporte tecnico tiene el mismo hash en todos los ATMs permitiendonos una conexion remota a otros dispositivos, pero esto no nos da nada, hasta que en la red encontramos un administrador central que tiene doble interfaz permitiendo asi llegar a otra seccion.
 en esta parte hay proyectos y cosas que pueden hacer perder el tiempo a cualquier persona pero buscamos nuevamente persistencia o estabilidad en un equipo, asi que jugando con el AD podemos hacernos de este y agregar algunas reglas para comprometer datos financieros importantes, dentro de nuestro despliegue hemos infectado mucha infraestructura para tener control completo y poder iniciar con la fase de post explotacion.
+
+- En honor a barbany jack (1977 - 2013)
 
 # Tecnicas
 
@@ -32,10 +34,10 @@ en esta parte hay proyectos y cosas que pueden hacer perder el tiempo a cualquie
 |----------------|------------------------------------------------------------------------|-----------------------------|
 | 9:50 - 10:20   | Iniciación de la Villa, apertura del escenario de ataque              | —                           |
 | 10:20 - 11:10  | Hacking SmartLock for fun and profit                                  | Cesar Ortega                |
-| 11:20 - 12:00  | DMA Attack en ATMs                                                    | Arnold Morales              |
-| 12:10 - 1:40   | Hookchain with beacon                                                 | Diego Hernandez             |
-| 12:10 - 1:40   | Movimiento lateral / Deserializacion                                  | Emiyelbarto                 |
-| 1:40 - 2:10    | Comida                                                                | —                           |
+| 11:20 - 12:00  | Bypass de EDR in ATM                                                  | Arnold Morales              |
+| 12:10 - 1:55   | Movimiento lateral / Deserializacion                                  | Emiyelbarto                 |
+| 1:00 - 1:45    | Hookchain with beacon                                                 | Diego Hernandez             |
+| 1:55 - 2:10    | Comida                                                                | —                           |
 | 2:20 - 3:40    | DACL - La verdad sobre el enterprise / comprometiendo AD              | Tierno / Hokma / Sky blue   |
 | 3:50 - 4:30    | BOF / PICs / UDRL SLEEPMASK - Cuales son tus mejores cartas?          | Adonai Diaz  / Hokma        |
 | 4:40 - 5:40    | El despliegue verdadero de un APT (no todo es lo que ves en reels)    |      APT VILLAGE            |
