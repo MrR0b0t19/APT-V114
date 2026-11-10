@@ -35,7 +35,7 @@ en esta parte hay proyectos y cosas que pueden hacer perder el tiempo a cualquie
 | 9:50 - 10:20   | Iniciación de la Villa, apertura del escenario de ataque              | —                           |
 | 10:20 - 11:10  | Hacking SmartLock for fun and profit                                  | Cesar Ortega                |
 | 11:20 - 12:00  | Bypass de EDR in ATM                                                  | Arnold Morales              |
-| 12:10 - 12:55  | Movimiento lateral / Deserializacion                                  | Emiyelbarto                 |
+| 12:10 - 12:55  | Movimiento lateral / Deserializacion                                  | EmiyelFeroz                 |
 | 1:00 - 1:45    | Hookchain with beacon                                                 | Diego Hernandez             |
 | 1:55 - 2:10    | Comida                                                                | —                           |
 | 2:20 - 3:40    | DACL - La verdad sobre el enterprise / comprometiendo AD & Cloud AD   | Tierno / Sky blue / Gothix  |
